@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TipTap</title>
+    <!--
+        For more customization options, we would advise
+        you to build your TailwindCSS from the source.
+        https://tailwindcss.com/docs/installation
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+
+    <!-- Small CSS to Hide elements at 1520px size -->
+    <style>
+        @media(max-width:1520px) {
+            .left-svg {
+                display: none;
+            }
+        }
+
+        /* small css for the mobile nav close */
+        #nav-mobile-btn.close span:first-child {
+            transform: rotate(45deg);
+            top: 4px;
+            position: relative;
+            background: #a0aec0;
+        }
+
+        #nav-mobile-btn.close span:nth-child(2) {
+            transform: rotate(-45deg);
+            margin-top: 0px;
+            background: #a0aec0;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+    <div class="flex items-center justify-center h-screen bg-gray-200 sm:px-6">
+    <div class="w-full max-w-sm p-4 bg-white rounded-md shadow-md sm:p-6">
+        <div class="flex items-center justify-center">
+        <a href="/" class="relative flex items-center inline-block h-5 h-full font-black leading-none">
+            <svg class="w-auto h-6 text-indigo-600 fill-current" viewBox="0 0 194 116"
+                xmlns="http://www.w3.org/2000/svg">
+                <g fill-rule="evenodd">
+                    <path
+                        d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z" />
+                    <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z" />
+                </g>
+            </svg>
+            <span class="ml-3 text-xl text-gray-800">TipTap<span class="text-pink-500">.</span></span>
+        </a>
+        </div>
+        <div class="flex items-center justify-center subheading">
+
+            The next gen B2B marketplace
+        </div>
+        <hr/>
+        <div class="flex items-center justify-center">
+            
+            <span class="text-xl font-medium text-gray-900">Login</span>
+        </div>
+        <form class="mt-4">
+            <label for="email" class="block">
+                <span class="text-sm text-gray-700">Email</span>
+                <input type="email" id="email" name="email" autocomplete="username"
+                    class="block w-full px-3 py-2 mt-1 text-gray-700 border rounded-md form-input focus:border-indigo-600"
+                    required />
+            </label>
+            <label for="password" class="block mt-3">
+                <span class="text-sm text-gray-700">Password</span>
+                <input type="password" id="password" name="password" autocomplete="current-password"
+                    class="block w-full px-3 py-2 mt-1 text-gray-700 border rounded-md form-input focus:border-indigo-600"
+                    required />
+            </label>
+            <div class="flex items-center justify-between mt-4">
+                <div>
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" class="text-indigo-600 border form-checkbox" />
+                        <span class="mx-2 text-sm text-gray-600">Remember me</span>
+                    </label>
+                </div>
+                <div>
+                    <a class="block text-sm text-indigo-700 fontme hover:underline" href="#">Forgot your password?</a>
+                </div>
+            </div>
+            <div class="mt-6">
+                <button type="submit"
+                    class="w-full px-4 py-2 text-sm text-center text-white bg-indigo-600 rounded-md hover:bg-indigo-500">Sign
+                    in</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="pt-4 pt-6 mt-10 text-center text-gray-400 border-t border-gray-100">© 2021 TipTap. All rights
+    reserved.</div>
+</footer>
+
+<!-- a little JS for the mobile nav button -->
+<script>
+if (document.getElementById('nav-mobile-btn')) {
+    document.getElementById('nav-mobile-btn').addEventListener('click', function () {
+        if (this.classList.contains('close')) {
+            document.getElementById('nav').classList.add('hidden');
+            this.classList.remove('close');
+        } else {
+            document.getElementById('nav').classList.remove('hidden');
+            this.classList.add('close');
+        }
+    });
+}
+</script>
+</body>
+</html>
